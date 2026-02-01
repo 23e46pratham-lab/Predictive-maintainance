@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vehicle Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Google Fonts for High Readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- LEFT SIDEBAR (Desktop) -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <span class="material-icons logo-icon">auto_awesome</span>
+                <h1 class="nav-title">NEXUS<span class="highlight">AI</span></h1>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="material-icons">speed</span>
+                        <span class="link-text">Live Telemetry</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="cockpit.html" class="nav-link">
+                        <span class="material-icons">av_timer</span>
+                        <span class="link-text">Cockpit</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ai-core.html" class="nav-link">
+                        <span class="material-icons">psychology</span>
+                        <span class="link-text">AI Neural Core</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="connection-status">
+                    <span class="status-dot pulsing"></span>
+                    <span>OBD-II LIVE</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content" id="main-content">
+
+            <!-- SECTION 2: VISUAL GAUGES -->
+            <section id="section-gauges" class="active-section">
+                <header class="section-header">
+                    <h2>Digital Cockpit</h2>
+                    <p class="subtitle">Graphical Instrument Cluster</p>
+                </header>
+
+                <div class="gauges-container">
+
+                    <!-- RPM GAUGE -->
+                    <div class="gauge-wrapper">
+                        <svg class="gauge-svg" viewBox="0 0 200 100">
+                            <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+                            <path class="gauge-fill" id="gauge-rpm-fill" d="M 20 100 A 80 80 0 0 1 180 100" />
+                        </svg>
+                        <div class="gauge-text">
+                            <span class="gauge-val" id="gauge-rpm-val">0</span>
+                            <span class="gauge-label">RPM</span>
+                        </div>
+                    </div>
+
+                    <!-- SPEEDOMETER -->
+                    <div class="gauge-wrapper main-gauge">
+                        <div class="glow-ring"></div>
+                        <svg class="gauge-svg full-circle" viewBox="0 0 200 200">
+                            <circle class="gauge-bg" cx="100" cy="100" r="90" />
+                            <circle class="gauge-fill-circle" id="gauge-speed-fill" cx="100" cy="100" r="90"
+                                stroke-dasharray="565" stroke-dashoffset="565" />
+                        </svg>
+                        <div class="gauge-text-center">
+                            <span class="gauge-val-large" id="gauge-speed-val">0</span>
+                            <span class="gauge-label">km/h</span>
+                        </div>
+                    </div>
+
+                    <!-- TEMP GAUGE -->
+                    <div class="gauge-wrapper">
+                        <svg class="gauge-svg" viewBox="0 0 200 100">
+                            <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+                            <path class="gauge-fill temp-gradient" id="gauge-temp-fill"
+                                d="M 20 100 A 80 80 0 0 1 180 100" />
+                        </svg>
+                        <div class="gauge-text">
+                            <span class="gauge-val" id="gauge-temp-val">0</span>
+                            <span class="gauge-label">°C</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Dynamic Load Analysis</h3>
+                        <canvas id="load-chart" width="600" height="250"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Fuel Economy History</h3>
+                        <canvas id="fuel-chart" width="600" height="250"></canvas>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="bottom-nav-item">
+                <span class="material-icons">speed</span>
+                <span class="label">Telemetry</span>
+            </a>
+            <a href="cockpit.html" class="bottom-nav-item active">
+                <span class="material-icons">av_timer</span>
+                <span class="label">Cockpit</span>
+            </a>
+            <a href="ai-core.html" class="bottom-nav-item">
+                <span class="material-icons">psychology</span>
+                <span class="label">AI Core</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vehicle Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Google Fonts for High Readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- LEFT SIDEBAR (Desktop) -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <span class="material-icons logo-icon">auto_awesome</span>
+                <h1 class="nav-title">NEXUS<span class="highlight">AI</span></h1>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="material-icons">speed</span>
+                        <span class="link-text">Live Telemetry</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cockpit.html" class="nav-link">
+                        <span class="material-icons">av_timer</span>
+                        <span class="link-text">Cockpit</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="ai-core.html" class="nav-link">
+                        <span class="material-icons">psychology</span>
+                        <span class="link-text">AI Neural Core</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="connection-status">
+                    <span class="status-dot pulsing"></span>
+                    <span>OBD-II LIVE</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content" id="main-content">
+
+            <!-- SECTION 3: AI INSIGHTS (ADVANCED) -->
+            <section id="section-ai" class="active-section">
+                <header class="section-header">
+                    <h2>AI Vehicle Intelligence</h2>
+                    <p class="subtitle">Neural System Summary</p>
+                </header>
+
+                <div class="ai-grid">
+
+                    <!-- CARD 1: VEHICLE HEALTH INSIGHT -->
+                    <div class="ai-card health-card">
+                        <div class="card-title">
+                            <span class="material-icons">health_and_safety</span> Vehicle Health
+                        </div>
+                        <div class="health-content">
+                            <div class="score-container">
+                                <div class="score-ring-outer">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" id="health-ring-fill" stroke-dasharray="0, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="score-text">
+                                        <span class="main-val" id="health-score-val">--</span>
+                                        <span class="label">SCORE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="health-details">
+                                <div class="detail-item">
+                                    <span class="label">RUL Estimate</span>
+                                    <span class="value" id="rul-val">Calculating...</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Risk Level</span>
+                                    <span class="value" id="health-risk">Low</span>
+                                </div>
+                                <p class="ai-summary" id="health-summary">System analysis active. No critical faults.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: DRIVER BEHAVIOR PROFILE -->
+                    <div class="ai-card driver-card">
+                        <div class="card-title">
+                            <span class="material-icons">face</span> Driver Profile
+                        </div>
+                        <div class="driver-content">
+                            <div class="profile-main">
+                                <div class="badge" id="driver-badge">ANALYZING</div>
+                                <div class="confidence">
+                                    <span class="label">Model Confidence</span>
+                                    <div class="conf-bar-bg">
+                                        <div class="conf-bar-fill" id="driver-conf-bar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="val" id="driver-conf-val">0%</span>
+                                </div>
+                            </div>
+                            <div class="impact-section">
+                                <span class="impact-label">Efficiency Impact</span>
+                                <span class="impact-val" id="fuel-impact">--</span>
+                            </div>
+                            <p class="ai-summary" id="driver-summary">Collecting behavioral data points...</p>
+                            <div class="tech-subtle">Model: Rolling Window LSTM</div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: ANOMALY MONITOR -->
+                    <div class="ai-card monitor-card">
+                        <div class="card-title">
+                            <span class="material-icons">graphic_eq</span> Anomaly Monitor
+                        </div>
+                        <div class="monitor-status" id="anomaly-status-badge">
+                            <span class="status-dot pulsing"></span>
+                            <span class="status-text">SYSTEM NORMAL</span>
+                        </div>
+                        <ul class="pattern-list" id="anomaly-list">
+                            <li><span class="material-icons check">check_circle</span> RPM Variance within limits</li>
+                            <li><span class="material-icons check">check_circle</span> Thermal gradient stable</li>
+                        </ul>
+                    </div>
+
+                    <!-- CARD 4: RECOMMENDATIONS -->
+                    <div class="ai-card recs-card">
+                        <div class="card-title">
+                            <span class="material-icons">assistant</span> AI Recommendations
+                        </div>
+                        <div class="recs-list" id="recs-list">
+                            <div class="rec-item">
+                                <span class="material-icons icon">info</span>
+                                <span class="text">Maintain current driving style for optimal efficiency.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- MOBILE BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="bottom-nav-item">
+                <span class="material-icons">speed</span>
+                <span class="label">Telemetry</span>
+            </a>
+            <a href="cockpit.html" class="bottom-nav-item">
+                <span class="material-icons">av_timer</span>
+                <span class="label">Cockpit</span>
+            </a>
+            <a href="ai-core.html" class="bottom-nav-item active">
+                <span class="material-icons">psychology</span>
+                <span class="label">AI Core</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

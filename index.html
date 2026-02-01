@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vehicle Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Google Fonts for High Readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- LEFT SIDEBAR (Desktop) -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <span class="material-icons logo-icon">auto_awesome</span>
+                <h1 class="nav-title">NEXUS<span class="highlight">AI</span></h1>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">
+                        <span class="material-icons">speed</span>
+                        <span class="link-text">Live Telemetry</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cockpit.html" class="nav-link">
+                        <span class="material-icons">av_timer</span>
+                        <span class="link-text">Cockpit</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ai-core.html" class="nav-link">
+                        <span class="material-icons">psychology</span>
+                        <span class="link-text">AI Neural Core</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="connection-status">
+                    <span class="status-dot pulsing"></span>
+                    <span>OBD-II LIVE</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content" id="main-content">
+
+            <!-- SECTION 1: ENGINE REAL-TIME DATA -->
+            <section id="section-engine" class="active-section">
+                <header class="section-header">
+                    <h2>Live Telemetry</h2>
+                    <p class="subtitle">Real-time Sensor Fusion Stream</p>
+                </header>
+
+                <div class="data-grid">
+                    <div class="data-card">
+                        <div class="card-label">Engine RPM</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-rpm">0</span>
+                            <span class="unit">RPM</span>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-label">Vehicle Speed</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-speed">0</span>
+                            <span class="unit">km/h</span>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-label">Throttle Position</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-throttle">0</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="prog-throttle" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-label">Engine Load</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-load">0</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="prog-load" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-label">Coolant Temp</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-coolant">0</span>
+                            <span class="unit">°C</span>
+                        </div>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-label">Battery Voltage</div>
+                        <div class="card-value-group">
+                            <span class="value-large" id="val-battery">12.0</span>
+                            <span class="unit">V</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- MOBILE BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="bottom-nav-item active">
+                <span class="material-icons">speed</span>
+                <span class="label">Telemetry</span>
+            </a>
+            <a href="cockpit.html" class="bottom-nav-item">
+                <span class="material-icons">av_timer</span>
+                <span class="label">Cockpit</span>
+            </a>
+            <a href="ai-core.html" class="bottom-nav-item">
+                <span class="material-icons">psychology</span>
+                <span class="label">AI Core</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
